@@ -13,7 +13,7 @@ class User(Base):
     id = Column(Integer(), primary_key=True)
     username = Column(String())
 
-    results = relationship('Result', back_populates='user', cascade='all, delete-orphan')
+    results = relationship('Result', back_populates='user')
 
 class House(Base):
     __tablename__ = 'houses'
@@ -21,7 +21,7 @@ class House(Base):
     id = Column(Integer(), primary_key=True)
     housename = Column(String())
 
-    results = relationship('Result', back_populates='house', cascade='all, delete-orphan')
+    results = relationship('Result', back_populates='house')
 
 class Result(Base):
     __tablename__ = 'results'
