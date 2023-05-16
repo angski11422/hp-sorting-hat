@@ -113,3 +113,18 @@
 #   a. Stand up to them (G)
 #   b. Ignore them and walk the other way (H)
 #   c. Neither (R)
+
+# questions = []
+# answers = [{}]
+# def question(index):
+#     print(questions[index])
+#     preface = 'a'
+#     for answer in answers[index]:
+#         print(f"{preface}: {answer.value}")
+#         preface += 1
+#     print("c: neither")
+#     user_input = input("Your response: ")
+#     if a do this (change index) this adds 4 to index
+#     elif b do this (change index) logic here based on whether the current index is even or odd (add or subtract 1)
+#     else c do this (change index) this adds 6 to index
+#     question(changed_index)
