@@ -49,3 +49,10 @@ class Question(Base):
     value_a = Column(Integer())
     value_b = Column(Integer())
     value_c = Column(Integer())
+
+    def __repr__(self):
+        return f"{self.question} \n" \
+            + f"a. {self.answer_a} \n" \
+            + f"b. {self.answer_b} \n" \
+            + "c. Neither \n"
+
