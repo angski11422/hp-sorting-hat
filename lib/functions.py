@@ -1,4 +1,4 @@
-import random
+from collections import Counter
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 from  models import Question
@@ -16,6 +16,14 @@ def generate_questions():
     return random_questions
     
     
-        
+def generate_house_results(array):
+    counter = Counter(array)
+    most_common = counter.most_common(1)
+    return most_common[0][0] if most_common else None
+
+
+
+
+
 
     
