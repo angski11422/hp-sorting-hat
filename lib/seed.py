@@ -18,8 +18,8 @@ if __name__ == '__main__':
     hufflepuff = House(housename="Hufflepuff")
     gryffindor = House(housename="Gryffindor")
 
-    # session.add_all([ravenclaw, slytherin, hufflepuff, gryffindor])
-    # session.commit()
+    session.add_all([ravenclaw, slytherin, hufflepuff, gryffindor])
+    session.commit()
 
     q1 = Question(question="Where is your dream vacation?", answer_a="Beach", answer_b="Mountains", value_a="2", value_b="1", value_c="3")
     q2 = Question(question="What is your favorite season?", answer_a="Winter", answer_b="Summer", value_a="1", value_b="2", value_c="4")
@@ -42,5 +42,6 @@ if __name__ == '__main__':
     q19 = Question(question="What is your favorite time of day?", answer_a="Early bird", answer_b="Night owl", value_a="1", value_b="4", value_c="2")
     q20 = Question(question="Which animal would you rather have as a pet?", answer_a="Dragon", answer_b="Unicorn", value_a="2", value_b="3", value_c="1")
 
-    # session.add_all([q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20])
-    # session.commit()
+    session.add_all([q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20])
+    session.commit()
+    session.close()

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-error_message = "Please enter a valid answer"
-c = "Neither"
+
 
 print ("Welcome to Hogwarts!!")
 

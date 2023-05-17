@@ -1,8 +1,8 @@
 
 
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, func
-from sqlalchemy.orm import relationship, backref
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, backref, declarative_base
+
 
 Base = declarative_base()
 engine = create_engine('sqlite:///sortinghat.db')
