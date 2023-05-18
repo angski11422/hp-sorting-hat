@@ -22,6 +22,8 @@ class House(Base):
     housename = Column(String())
 
     results = relationship('Result', back_populates='house')
+    def __repr__(self):
+        return f"{self.id} {self.housename}"
 
 class Result(Base):
     __tablename__ = 'results'
