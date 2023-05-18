@@ -2,7 +2,7 @@
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import User, House, Result, Question
+from models import House, Question
 
 
 

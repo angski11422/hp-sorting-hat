@@ -3,6 +3,12 @@ from functions import *
 from time import sleep
 import sys
 from models import User, Result
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+engine = create_engine('sqlite:///sortinghat.db')
+Session = sessionmaker(bind=engine)
+session = Session()
 
 # Add music and art
 
@@ -16,7 +22,9 @@ while True:
     else:
         in_game = True
     
-    # push username to table
+    user = User(username=f"{username_input}")
+    session.add(user)
+    session.commit()
 
     
     if in_game is True:
@@ -64,10 +72,14 @@ while True:
             for house in house_info:
                 if most_repeated == house.id:
                     print(f"CONGRATS! You are a {house.housename}")
+
+                    result = Result(user_id=f"{user.id}", house_id=f"{house.id}")
+                    session.add(result)
+                    session.commit()
                     sys.exit(-1)
                         
 
-        # post result to table
+        
                     
         elif take_quiz == "no":
             print ("\nPlease turn in your wand and leave Hogwarts immediately. Goodbye!")

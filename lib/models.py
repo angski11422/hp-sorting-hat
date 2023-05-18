@@ -30,12 +30,6 @@ class Result(Base):
 
     id = Column(Integer(), primary_key=True)
     user_id = Column(Integer(), ForeignKey('users.id'))
-    question1 = Column(Integer())
-    question2 = Column(Integer())
-    question3 = Column(Integer())
-    question4 = Column(Integer())
-    question5 = Column(Integer())
-    question6  = Column(Integer())
     house_id = Column(Integer(), ForeignKey('houses.id'))
 
     user = relationship('User', back_populates='results')
