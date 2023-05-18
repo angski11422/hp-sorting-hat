@@ -1,3 +1,5 @@
+from colorama import Fore, Back, Style
+
 castle = '''
 
                                                     !_
@@ -47,9 +49,10 @@ welcome = '''
 
 '''
 class Logo: 
-    def __init__(self, name, art):
+    def __init__(self, name, art, color):
         self.name = name
         self.art = art 
+        self.color = color
 
 ravenclaw = Logo('Ravenclaw','''
 
@@ -86,7 +89,7 @@ ravenclaw = Logo('Ravenclaw','''
                (_/  /   | | j-"          ~^~
                  ~-<_(_.^-~"
 
-''')
+''', 'BLUE')
 slytherin = Logo('Slytherin','''
 
                              __...__      
@@ -116,7 +119,7 @@ slytherin = Logo('Slytherin','''
              .'   :                             
            .' .--'                              
           '--'
-''')
+''', 'GREEN')
 hufflepuff = Logo('Hufflepuff','''
                     ___,,___
            _,-='=- =-  -`"--.__,,.._
@@ -130,7 +133,7 @@ hufflepuff = Logo('Hufflepuff','''
               `""'  `->>>    ``WHMb,.    `-_<@)
                                 `"QMM`.
                                    `>>>
-''')
+''', 'YELLOW')
 gryffindor = Logo('Gryffindor','''
                                                     ,w.
                                               ,YWMMw  ,M  ,
@@ -147,5 +150,56 @@ gryffindor = Logo('Gryffindor','''
           /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
          (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
           `"""                    `"""   `"'                  `---" 
-''')
+''', 'RED')
 logos = [ravenclaw, slytherin, hufflepuff, gryffindor]
+
+hat = '''
+
+                                  .-"""""""--,                   
+                                 /\        ,::                   
+                                :  `-   ,+:::;                   
+                                ;           (_                   
+                               :      `-.     ;                  
+                               :,_           ;                   
+                                ;::+.      .+:L                  
+                               /             ";;                 
+                              :  ,          .+:J.                
+                              ;;'   "-._   `"^" :                
+                             :'      ____       ;                
+                             ;_..--""    ""-+.._:                
+                        '._.-|; .__.__.__.__.__. \_. 
+                                     
+'''
+
+wizard = '''
+                      ____
+                  .'* *.'
+               __/_*_*(_
+              / _______ \ 
+             _\_)/___\(_/_
+            / _((\- -/))_ \ 
+            \ \())(-)(()/ /
+             ' \(((()))/ '
+            / ' \)).))/ ' \ 
+           / _ \ - | - /_  \ 
+          (   ( .|'`'|. )   )
+           \. __ /    )\ __./ 
+            \/  \   ' /  \/
+             .'  '._.' ' )
+              / /  |  \ \ 
+             / .   .   . \ 
+            /   .     .   \ 
+           /   /   |   \   \ 
+         .'   /    b    '.  '.
+     _.-'    /     Bb     '-. '-._
+ _.-'       |      BBb       '-.  '-.
+(___________\____.dBBBb.________)____)
+'''
+wand = '''
+                .:.^.  *
+  *.    *   .::'.*.>
+    `:.    '':.  |
+      `:.  .::'  |  *
+  *     `:::'    |
+         `*'     |       
+'''
