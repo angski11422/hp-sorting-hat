@@ -1,4 +1,17 @@
 from colorama import Fore, Back, Style
+from playsound import playsound
+
+def theme():
+  playsound('theme.mp3')
+
+def hat_begin():
+   playsound('theme_hat.mp3')
+
+def hat_sort():
+   playsound('theme_sort.mp3')
+
+def end():
+   playsound('theme_end.mp3')
 
 castle = '''
 

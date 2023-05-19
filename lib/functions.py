@@ -1,7 +1,7 @@
 from collections import Counter
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
-from  models import Question, House
+from  models import Question, House, User, Result
 
 
 
@@ -23,6 +23,15 @@ def generate_results(array):
 def generate_house():
     house_info = session.query(House).all()
     return house_info
+
+def commit_name(username_input):
+    user = User(username=f"{username_input}")
+    session.add(user)
+    session.commit()
+def commit_result(user.id, house.id):
+    result = Result(user_id=f"{user.id}", house_id=f"{house.id}")
+    session.add(result)
+    session.commit()
 
 
 
