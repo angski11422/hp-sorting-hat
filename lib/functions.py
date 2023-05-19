@@ -26,13 +26,18 @@ def generate_house():
 
 #commit to user table
 def commit_name(username):
-    user = User(username="username")
+    user = User(username=f"{username}")
     session.add(user)
     session.commit()
 
+#query user
+def query_user(username_input):
+    userid = session.query(User).order_by(User.id.desc()).filter_by(username = f'{username_input}').first()
+    return userid
+
 #commit to results table
-def commit_result(user, house):
-    result = Result(user_id=f"{user}", house_id=f"{house}")
+def commit_result(userid, house):
+    result = Result(user_id=f"{userid}", house_id=f"{house}")
     session.add(result)
     session.commit()
 

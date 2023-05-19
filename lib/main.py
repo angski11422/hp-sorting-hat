@@ -8,6 +8,7 @@ from art import *
 from models import User
 
 
+
 init(autoreset = True)
 sound_thread = threading.Thread(target=theme)
 sound_thread.start() 
@@ -24,7 +25,8 @@ while True:
         print(Fore.RED+Style.BRIGHT+"Error: Please enter a valid name.")
     else:
         in_game = True
-        user = User(username=f"{username_input}")
+        commit_name(username_input)
+        
     
         #instructions
         if in_game is True:
@@ -33,13 +35,17 @@ while True:
             print (Fore.MAGENTA+"\nTake a seat and let me explain how the sorting hat works.")
             sleep(1)
             print (Fore.CYAN+Style.BRIGHT+hat)
-            sleep(.5)
-            print (Fore.MAGENTA+"The four houses are called Gryffindor, Hufflepuff, Ravenclaw, and Slytherin.") 
+            sleep(1)
+            print (Fore.MAGENTA+"The four houses are called Gryffindor, Hufflepuff, Ravenclaw, and Slytherin.")
+            sleep(.5) 
             print (Fore.MAGENTA+"Each house has its own noble history and each has produced outstanding witches and wizards.") 
+            sleep(.5)
             print (Fore.MAGENTA+"While you are at Hogwarts, your triumphs will earn your house points, while any rulebreaking will lose house points.")
+            sleep(.5)
             print (Fore.MAGENTA+"At the end of the year, the house with the most points is awarded the house cup, a great honor.")
+            sleep(.5)
             print (Fore.MAGENTA+"I hope each of you will be a credit to whichever house becomes yours.")
-            sleep (.5)
+            sleep(.5)
             print (Fore.MAGENTA+"\nIn order to determine which house is yours, \nI will ask you a series of questions to get an idea of your character.")
             sleep(.5)
             print (Fore.MAGENTA+"You will answer either a, b, or c")
@@ -51,7 +57,6 @@ while True:
 
             take_quiz = input (Fore.GREEN+Style.BRIGHT+"\nAre you ready to begin? (yes/no) ").lower()
             if take_quiz == "yes":
-                commit_name(username_input)
                 print (Fore.CYAN+Style.BRIGHT+wizard)
                 hat_begin()
                 sleep(.5)
@@ -94,7 +99,8 @@ while True:
                                 color = getattr(Fore, logo.color)
                                 print(color+Style.BRIGHT+f"CONGRATS! You are a {house.housename}")
                                 print(color+Style.BRIGHT+logo.art)
-                                commit_result(user.id, house.id)
+                                userid = query_user(username_input)
+                                commit_result(userid, house.id)
                                 end()
                                 print (Fore.CYAN+"Now go join your house and have a great year!")
                                 sys.exit(-1)

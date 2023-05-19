@@ -15,6 +15,9 @@ class User(Base):
 
     results = relationship('Result', back_populates='user')
 
+    def __repr__(self):
+        return f"{self.id}"
+
 class House(Base):
     __tablename__ = 'houses'
 
@@ -45,10 +48,12 @@ class Question(Base):
     value_a = Column(Integer())
     value_b = Column(Integer())
     value_c = Column(Integer())
+    value_d = Column(Integer())
 
     def __repr__(self):
         return f"{self.question} \n" \
             + f"a. {self.answer_a} \n" \
             + f"b. {self.answer_b} \n" \
-            + "c. Neither \n"
+            + "c. Neither \n" \
+            + "d. Either/Both \n"
 
