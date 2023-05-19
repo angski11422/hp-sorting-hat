@@ -8,7 +8,6 @@ from art import *
 from models import User
 
 
-
 init(autoreset = True)
 sound_thread = threading.Thread(target=theme)
 sound_thread.start() 
