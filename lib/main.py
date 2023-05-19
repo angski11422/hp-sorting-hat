@@ -5,21 +5,15 @@ from colorama import Fore, Back, Style, init
 from functions import *
 from time import sleep
 from art import *
+from models import User
 
 
 init(autoreset = True)
-
-#"The four houses are called Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. 
-# Each house has its own noble history and each has produced outstanding witches and wizards. 
-# While you are at Hogwarts, your triumphs will earn your house points, while any rulebreaking will lose house points. 
-# At the end of the year, the house with the most points is awarded the house cup, a great honor. 
-# I hope each of you will be a credit to whichever house becomes yours.
-
-
 sound_thread = threading.Thread(target=theme)
 sound_thread.start() 
 
-print(Back.CYAN+castle)
+#start
+print(Back.CYAN+Style.BRIGHT+castle)
 sleep(1)
 print (Fore.CYAN+welcome)
 sleep(1)
@@ -30,6 +24,7 @@ while True:
         print(Fore.RED+Style.BRIGHT+"Error: Please enter a valid name.")
     else:
         in_game = True
+        user = User(username=f"{username_input}")
     
 
         if in_game is True:
@@ -37,9 +32,17 @@ while True:
             sleep(1)
             print (Fore.MAGENTA+"\nTake a seat and let me explain how the sorting hat works.")
             sleep(1)
-            print (Fore.MAGENTA+"\nI will ask you a series of questions to get an idea of your character.")
+            print (Fore.CYAN+hat)
             sleep(.5)
-            print (Fore.MAGENTA+"\nYou will answer either a, b, or c")
+            print (Fore.MAGENTA+"The four houses are called Gryffindor, Hufflepuff, Ravenclaw, and Slytherin.") 
+            print ("Each house has its own noble history and each has produced outstanding witches and wizards.") 
+            print ("While you are at Hogwarts, your triumphs will earn your house points, while any rulebreaking will lose house points.")
+            print ("At the end of the year, the house with the most points is awarded the house cup, a great honor.")
+            print ("I hope each of you will be a credit to whichever house becomes yours.")
+            sleep (.5)
+            print (Fore.MAGENTA+"\nIn order to determine which house is yours, \nI will ask you a series of questions to get an idea of your character.")
+            sleep(.5)
+            print (Fore.MAGENTA+"You will answer either a, b, or c")
             sleep(1)
             print (Fore.MAGENTA+"\nOnce you have reached the end of the questions,")
             sleep(.5)
@@ -49,6 +52,7 @@ while True:
             take_quiz = input (Fore.GREEN+"\nAre you ready to begin? (yes/no) ").lower()
             if take_quiz == "yes":
                 commit_name(username_input)
+                print (Fore.CYAN+wizard)
                 hat_begin()
                 sleep(.5)
                 print (Fore.GREEN+Style.BRIGHT+"\nHere is your first question\n")
