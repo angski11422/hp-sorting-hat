@@ -82,8 +82,12 @@ while True:
                         answers.append(question.value_c)
                         print(Style.RESET_ALL)
                         index += 1
+                    elif q_input == "d":
+                        answers.append(question.value_d)
+                        print(Style.RESET_ALL)
+                        index += 1
                     else:
-                        print (Fore.RED+Style.BRIGHT+"\nAnswer a, b, or c")
+                        print (Fore.RED+Style.BRIGHT+"\nAnswer a, b, c, or d")
                 
             #getting results based on answers
                 most_repeated = generate_results(answers)
