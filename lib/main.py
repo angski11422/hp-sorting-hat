@@ -3,9 +3,8 @@ import sys
 import threading
 from colorama import Fore, Back, Style, init
 from functions import *
-from time import sleep
 from art import *
-from models import User
+from time import sleep
 
 
 init(autoreset = True)
@@ -54,8 +53,10 @@ while True:
             print (Fore.MAGENTA+"\nI will reveal what house you belong to.")
             sleep(1.5)
 
+            in_quiz = False
             take_quiz = input (Fore.GREEN+Style.BRIGHT+"\nAre you ready to begin? (yes/no) ").lower()
             if take_quiz == "yes":
+                in_quiz = True
                 print (Fore.CYAN+Style.BRIGHT+wizard)
                 hat_begin()
                 sleep(.5)
